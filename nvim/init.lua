@@ -50,7 +50,6 @@ local final_spec = vim.list_extend(base_keymaps, CORE_KEYMAPS)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   -- See `:help gitsigns` to understand what the configuration keys do
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',

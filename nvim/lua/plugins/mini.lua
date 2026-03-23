@@ -29,6 +29,10 @@ return { -- Collection of various small independent plugins/modules
       return '%2l:%-2v'
     end
 
+    statusline.section_filename = function()
+      return '%F%m%r'
+    end
+
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   end,
