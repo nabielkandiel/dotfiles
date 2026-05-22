@@ -1,40 +1,23 @@
--- Neo-tree is a Neovim plugin to browse the file system
--- https://github.com/nvim-neo-tree/neo-tree.nvim
-
-return {
-  'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-    'MunifTanjim/nui.nvim',
+require('neo-tree').setup({
+  window = {
+    position = 'left',
+    width = 32,
+    auto_resize = true,
   },
-  lazy = false,
-  keys = {
-    -- Actual commands that will show under <leader>e
-    { '<leader>ee', '<cmd>Neotree toggle<CR>', desc = 'Toggle', silent = true },
-    { '<leader>er', '<cmd>Neotree reveal<CR>', desc = 'Reveal file', silent = true },
-    { '<leader>ef', '<cmd>Neotree focus<CR>', desc = 'Focus', silent = true },
-    { '<leader>ec', '<cmd>Neotree close<CR>', desc = 'Close', silent = true },
-
-    -- Your old mapping kept as a fast shortcut
-    { '\\', '<cmd>Neotree reveal<CR>', desc = 'Neo-tree reveal', silent = true },
-  },
-  opts = {
+  filesystem = {
+    follow_current_file = { enabled = true },
+    hijack_netrw_behavior = 'disabled',
     window = {
-      position = 'left',
-      width = 32,
-      auto_resize = true,
-    },
-    filesystem = {
-      follow_current_file = { enabled = true },
-      hijack_netrw_behavior = 'disabled',
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-          ['<space>'] = 'open',
-        },
+      mappings = {
+        ['\\'] = 'close_window',
+        ['<space>'] = 'open',
       },
     },
   },
-}
+})
+
+vim.keymap.set('n', '<leader>ee', '<cmd>Neotree toggle<CR>', { desc = 'Toggle', silent = true })
+vim.keymap.set('n', '<leader>er', '<cmd>Neotree reveal<CR>', { desc = 'Reveal file', silent = true })
+vim.keymap.set('n', '<leader>ef', '<cmd>Neotree focus<CR>', { desc = 'Focus', silent = true })
+vim.keymap.set('n', '<leader>ec', '<cmd>Neotree close<CR>', { desc = 'Close', silent = true })
+vim.keymap.set('n', '\\', '<cmd>Neotree reveal<CR>', { desc = 'Neo-tree reveal', silent = true })
