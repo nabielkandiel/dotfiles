@@ -86,6 +86,13 @@ local servers = {
       },
     },
   },
+  yamlls = {
+    on_attach = function(client, bufnr)
+      if vim.api.nvim_buf_get_name(bufnr):match '%.clangd$' then
+        vim.lsp.buf_detach_client(bufnr, client.id)
+      end
+    end,
+  },
 }
 
 require('mason').setup()
