@@ -37,6 +37,7 @@ local specs = {
   'https://github.com/nvim-treesitter/nvim-treesitter',
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range('*') },
   'https://github.com/akinsho/bufferline.nvim',
+  'https://github.com/tiagovla/scope.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/tpope/vim-fugitive',
@@ -122,12 +123,7 @@ wk.setup({
       F12 = '<F12>',
     },
   },
-  spec = vim.list_extend({
-    { '<leader>s', group = '[S]earch' },
-    { '<leader>t', group = '[T]oggle' },
-    { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-    { '<leader>e', group = 'Neo-tree' },
-  }, CORE_KEYMAPS),
+  spec = CORE_KEYMAPS,
 })
 vim.keymap.set('n', '<leader>?', function()
   wk.show({ global = false })

@@ -26,7 +26,21 @@ vim.keymap.set('n', 'N', 'Nzzzv', opts)
 -- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<leader>bx', ':bdelete<CR>', opts)
+
+local function smart_close()
+  local ok, scope = pcall(require, 'scope')
+  if ok and scope.close_buffer then
+    scope.close_buffer()
+  else
+    if vim.fn.exists(':Bdelete') == 2 then
+      vim.cmd('Bdelete')
+    else
+      vim.cmd('bdelete')
+    end
+  end
+end
+
+vim.keymap.set('n', '<leader>bx', smart_close, { desc = 'Close buffer (Smart)' })
 vim.keymap.set('n', '<leader>bn', '<cmd> enew <CR>', opts)
 
 -- Window Managment
@@ -45,7 +59,33 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) -- go to previous tab
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', opts)
 
+-- Git (Fugitive & Gitsigns)
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git [S]tatus' })
+vim.keymap.set('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', { desc = 'Git [D]iff split' })
+vim.keymap.set('n', '<leader>gb', '<cmd>G blame<CR>', { desc = 'Git [B]lame' })
+vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = 'Git [C]ommit' })
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = 'Git [P]ush' })
+
 CORE_KEYMAPS = {
+  { '<leader>g', group = '[G]it' },
+  { '<leader>gs', desc = 'Git Status' },
+  { '<leader>gd', desc = 'Git Diff Split' },
+  { '<leader>gb', desc = 'Git Blame' },
+  { '<leader>gc', desc = 'Git Commit' },
+  { '<leader>gp', desc = 'Git Push' },
+  { '<leader>gh', group = '[H]unk' },
+  { '<leader>ghp', desc = 'Preview Hunk' },
+  { '<leader>ghs', desc = 'Stage Hunk' },
+  { '<leader>ghr', desc = 'Reset Hunk' },
+  { '<leader>ghu', desc = 'Undo Stage Hunk' },
+  { '<leader>ghS', desc = 'Stage Buffer' },
+  { '<leader>ghR', desc = 'Reset Buffer' },
+  { '<leader>ghb', desc = 'Blame Line' },
+  { '<leader>ghd', desc = 'Diff against Index' },
+  { '<leader>ghD', desc = 'Diff against last Commit' },
+  { '<leader>gt', group = '[T]oggle' },
+  { '<leader>gtb', desc = 'Toggle Blame line' },
+  { '<leader>gtd', desc = 'Toggle Deleted' },
   { '<leader>w', group = '[W]indow' },
   { '<leader>wv', desc = 'Split Window Vertical' },
   { '<leader>wh', desc = 'Split Window Horizontal' },
@@ -55,7 +95,7 @@ CORE_KEYMAPS = {
   { '<leader>b', group = '[B]uffers' },
   { '<leader>b<Tab>', desc = 'next buffer' },
   { '<leader>b<S-Tab>', desc = 'prev buffer' },
-  { '<leader>bx', desc = 'close buffer' },
+  { '<leader>bx', desc = 'close buffer (smart)' },
   { '<leader>bn', desc = 'new buffer' },
   { '<leader>bf', desc = 'save buffer (no format)' },
   { '<leader>l', group = '[L]SP' },
@@ -69,6 +109,9 @@ CORE_KEYMAPS = {
   { '<leader>lO', desc = '[O]pen document symbols' },
   { '<leader>lW', desc = 'Open [W]orkspace symbols' },
   { '<leader>lt', desc = 'Goto [t]ype definition' },
+  { '<leader>s', group = '[S]earch' },
+  { '<leader>t', group = '[T]oggle' },
+  { '<leader>e', group = 'Neo-tree' },
   { '<leader>tw', desc = 'set [w]rap' },
   { '<leader>to', desc = 'open new tab' },
   { '<leader>tx', desc = 'close current tab' },
