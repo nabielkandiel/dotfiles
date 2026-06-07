@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) -- go to next tab
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) -- go to previous tab
 
 -- Toggle line wrapping
-vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
+vim.keymap.set('n', '<leader>Lw', '<cmd>set wrap!<CR>', opts)
 
 CORE_KEYMAPS = {
   { '<leader>w', group = '[W]indow' },
@@ -58,6 +58,19 @@ CORE_KEYMAPS = {
   { '<leader>bx', desc = 'close buffer' },
   { '<leader>bn', desc = 'new buffer' },
   { '<leader>bf', desc = 'save buffer (no format)' },
+  { '<leader>l', group = '[L]SP' },
+  { '<leader>ln', desc = 'Re[n]ame buffer' },
+  { '<leader>la', desc = 'Goto code [a]ction' },
+  { '<leader>lr', desc = 'Goto [r]eference' },
+  { '<leader>li', desc = 'Goto [i]mplementation' },
+  { '<leader>ld', desc = 'Goto [d]efinition' },
+  { '<leader>lD', desc = 'Goto [D]eclaration' },
+  { '<leader>lf', desc = 'Show diagnostic [f]loating message' },
+  { '<leader>lO', desc = '[O]pen document symbols' },
+  { '<leader>lW', desc = 'Open [W]orkspace symbols' },
+  { '<leader>lt', desc = 'Goto [t]ype definition' },
+  { '<leader>L', group = '[L]ocal Settings' },
+  { '<leader>Lw', desc = 'set [w]rap' },
   { '<leader>to', desc = 'open new tab' },
   { '<leader>tx', desc = 'close current tab' },
   { '<leader>tn', desc = 'go to next tab' },

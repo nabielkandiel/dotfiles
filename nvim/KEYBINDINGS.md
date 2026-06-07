@@ -66,11 +66,11 @@
 
 ---
 
-## Toggle (`<leader>t`)
+## Toggle / Local Settings (`<leader>L`)
 
 | Key | Mode | Action |
 |-----|------|--------|
-| `<leader>lw` | n | Toggle line wrap |
+| `<leader>Lw` | n | Toggle line wrap |
 | `<leader>th` | n | Toggle LSP inlay hints |
 | `<leader>tb` | n | Toggle git blame line |
 | `<leader>tD` | n | Toggle git show deleted (inline) |
@@ -105,19 +105,20 @@
 
 ---
 
-## LSP
+## LSP (`<leader>l`)
 
 | Key | Mode | Action |
 |-----|------|--------|
-| `grn` | n | Rename symbol |
-| `gra` | n / x | Code action |
-| `grr` | n | Go to references |
-| `gri` | n | Go to implementation |
-| `grd` | n | Go to definition |
-| `grD` | n | Go to declaration |
-| `grt` | n | Go to type definition |
-| `gO` | n | Document symbols |
-| `gW` | n | Workspace symbols |
+| `<leader>ln` | n | Rename symbol |
+| `<leader>la` | n / x | Code action |
+| `<leader>lr` | n | Go to references |
+| `<leader>li` | n | Go to implementation |
+| `<leader>ld` | n | Go to definition |
+| `<leader>lD` | n | Go to declaration |
+| `<leader>lt` | n | Go to type definition |
+| `<leader>lf` | n | Show diagnostic floating message |
+| `<leader>lO` | n | Document symbols |
+| `<leader>lW` | n | Workspace symbols |
 
 ---
 
