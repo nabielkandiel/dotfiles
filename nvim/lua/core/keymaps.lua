@@ -62,16 +62,18 @@ vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', opts)
 -- Git (Fugitive & Gitsigns)
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git [S]tatus' })
 vim.keymap.set('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', { desc = 'Git [D]iff split' })
+vim.keymap.set('n', '<leader>gc', ':Gdiffsplit ', { desc = 'Git [C]ompare (branch)' })
 vim.keymap.set('n', '<leader>gb', '<cmd>G blame<CR>', { desc = 'Git [B]lame' })
-vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = 'Git [C]ommit' })
+vim.keymap.set('n', '<leader>gC', '<cmd>Git commit<CR>', { desc = 'Git [C]ommit' })
 vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = 'Git [P]ush' })
 
 CORE_KEYMAPS = {
   { '<leader>g', group = '[G]it' },
   { '<leader>gs', desc = 'Git Status' },
   { '<leader>gd', desc = 'Git Diff Split' },
+  { '<leader>gc', desc = 'Git Compare (branch)' },
   { '<leader>gb', desc = 'Git Blame' },
-  { '<leader>gc', desc = 'Git Commit' },
+  { '<leader>gC', desc = 'Git Commit' },
   { '<leader>gp', desc = 'Git Push' },
   { '<leader>gh', group = '[H]unk' },
   { '<leader>ghp', desc = 'Preview Hunk' },
