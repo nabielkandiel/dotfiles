@@ -40,7 +40,7 @@ local specs = {
   'https://github.com/tiagovla/scope.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/christoomey/vim-tmux-navigator',
-  'https://github.com/tpope/vim-fugitive',
+  'https://github.com/sindrets/diffview.nvim',
   'https://github.com/folke/todo-comments.nvim',
   'https://github.com/MagicDuck/grug-far.nvim',
 
@@ -84,9 +84,9 @@ require('plugins.blink')
 require('plugins.autoformat')
 require('plugins.gitsigns')
 require('plugins.misc')
-require('kickstart.plugins.neo-tree')
-require('kickstart.plugins.indent_line')
-require('kickstart.plugins.autopairs')
+require('plugins.grug-far')
+require('plugins.neo-tree')
+require('plugins.diffview')
 
 -- which-key (inline: needs CORE_KEYMAPS global from core.keymaps)
 local wk = require('which-key')

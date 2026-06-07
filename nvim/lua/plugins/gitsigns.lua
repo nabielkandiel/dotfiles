@@ -34,22 +34,22 @@ require('gitsigns').setup({
 
     -- Actions
     -- visual mode
-    map('v', '<leader>ghs', function()
+    map('v', '<leader>gks', function()
       gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end, { desc = 'git [s]tage hunk' })
-    map('v', '<leader>ghr', function()
+    map('v', '<leader>gkr', function()
       gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end, { desc = 'git [r]eset hunk' })
     -- normal mode
-    map('n', '<leader>ghs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
-    map('n', '<leader>ghr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
-    map('n', '<leader>ghS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
-    map('n', '<leader>ghu', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
-    map('n', '<leader>ghR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
-    map('n', '<leader>ghp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
-    map('n', '<leader>ghb', gitsigns.blame_line, { desc = 'git [b]lame line' })
-    map('n', '<leader>ghd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
-    map('n', '<leader>ghD', function()
+    map('n', '<leader>gks', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
+    map('n', '<leader>gkr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
+    map('n', '<leader>gkS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
+    map('n', '<leader>gku', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
+    map('n', '<leader>gkR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
+    map('n', '<leader>gkp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
+    map(n, '<leader>gb', gitsigns.blame_line, { desc = 'git [b]lame line' })
+    map('n', '<leader>gkd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+    map('n', '<leader>gkD', function()
       gitsigns.diffthis('@')
     end, { desc = 'git [D]iff against last commit' })
     -- Toggles

@@ -11,26 +11,22 @@ CORE_KEYMAPS = {
   { '<leader>b<S-Tab>', desc = 'prev buffer' },
   { '<leader>bx', desc = 'close buffer (smart)' },
   { '<leader>bn', desc = 'new buffer' },
-  { '<leader>bf', desc = 'save buffer (no format)' },
+  { '<leader>bs', desc = 'save buffer (no format)' },
   { '<leader>g', group = '[G]it' },
-  { '<leader>gs', desc = 'Git Status' },
-  { '<leader>gd', desc = 'Git Diff Split' },
-  { '<leader>gc', desc = 'Git Compare (branch)' },
-  { '<leader>gb', desc = 'Git Blame' },
-  { '<leader>gC', desc = 'Git Commit' },
-  { '<leader>gp', desc = 'Git Push' },
-  { '<leader>gh', group = '[H]unk' },
-  { '<leader>ghp', desc = 'Preview Hunk' },
-  { '<leader>ghs', desc = 'Stage Hunk' },
-  { '<leader>ghr', desc = 'Reset Hunk' },
-  { '<leader>ghu', desc = 'Undo Stage Hunk' },
-  { '<leader>ghS', desc = 'Stage Buffer' },
-  { '<leader>ghR', desc = 'Reset Buffer' },
-  { '<leader>ghb', desc = 'Blame Line' },
-  { '<leader>ghd', desc = 'Diff against Index' },
-  { '<leader>ghD', desc = 'Diff against last Commit' },
-  { '<leader>gt', group = '[T]oggle' },
-  { '<leader>gtb', desc = 'Toggle Blame line' },
+  { '<leader>gv', desc = 'Git View (Diffview)' },
+  { '<leader>gb', desc = 'Git Blame (Line Detail)' },
+  { '<leader>gh', desc = 'Git History (File)' },
+  { '<leader>gk', group = 'Git Hun[k]' },
+  { '<leader>gkp', desc = 'Preview Hunk' },
+  { '<leader>gks', desc = 'Stage Hunk' },
+  { '<leader>gkr', desc = 'Reset Hunk' },
+  { '<leader>gku', desc = 'Undo Stage Hunk' },
+  { '<leader>gkS', desc = 'Stage Buffer' },
+  { '<leader>gkR', desc = 'Reset Buffer' },
+  { '<leader>gkd', desc = 'Diff against Index' },
+  { '<leader>gkD', desc = 'Diff against last Commit' },
+  { '<leader>gt', group = 'Git [T]oggle' },
+  { '<leader>gtb', desc = 'Toggle Inline Blame' },
   { '<leader>gtd', desc = 'Toggle Deleted' },
   { '<leader>l', group = '[L]SP' },
   { '<leader>ln', desc = 'Re[n]ame buffer' },
@@ -58,9 +54,9 @@ CORE_KEYMAPS = {
   { '<leader>wh', desc = 'Split Window Horizontal' },
   { '<leader>ws', desc = 'Make Split Same Size' },
   { '<leader>wx', desc = 'Close Split' },
-  { '<leader>wn', desc = 'save no formatting' },
   { '<leader>e', group = 'Neo-tree' },
-  { '<leader>tw', desc = 'set [w]rap' },
+  { '<leader>t', group = '[T]abs / [T]oggles' },
+  { '<leader>tw', desc = 'Toggle Wrap' },
   { '<leader>to', desc = 'open new tab' },
   { '<leader>tx', desc = 'close current tab' },
   { '<leader>tn', desc = 'go to next tab' },
@@ -76,7 +72,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 local opts = { noremap = true, silent = true }
 
 -- save without formatting
-vim.keymap.set('n', '<leader>bn', '<cmd>noautocmd w <CR>', opts)
+vim.keymap.set('n', '<leader>bs', '<cmd>noautocmd w <CR>', opts)
 
 -- vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
@@ -120,14 +116,6 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts)
 
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', opts)
-
--- Git (Fugitive)
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git [S]tatus' })
-vim.keymap.set('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', { desc = 'Git [D]iff split' })
-vim.keymap.set('n', '<leader>gc', ':Gdiffsplit ', { desc = 'Git [C]ompare (branch)' })
-vim.keymap.set('n', '<leader>gb', '<cmd>G blame<CR>', { desc = 'Git [B]lame' })
-vim.keymap.set('n', '<leader>gC', '<cmd>Git commit<CR>', { desc = 'Git [C]ommit' })
-vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = 'Git [P]ush' })
 
 -- Keybinds to make split navigation easier.
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
