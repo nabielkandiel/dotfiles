@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) -- go to next tab
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) -- go to previous tab
 
 -- Toggle line wrapping
-vim.keymap.set('n', '<leader>Lw', '<cmd>set wrap!<CR>', opts)
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', opts)
 
 CORE_KEYMAPS = {
   { '<leader>w', group = '[W]indow' },
@@ -69,8 +69,7 @@ CORE_KEYMAPS = {
   { '<leader>lO', desc = '[O]pen document symbols' },
   { '<leader>lW', desc = 'Open [W]orkspace symbols' },
   { '<leader>lt', desc = 'Goto [t]ype definition' },
-  { '<leader>L', group = '[L]ocal Settings' },
-  { '<leader>Lw', desc = 'set [w]rap' },
+  { '<leader>tw', desc = 'set [w]rap' },
   { '<leader>to', desc = 'open new tab' },
   { '<leader>tx', desc = 'close current tab' },
   { '<leader>tn', desc = 'go to next tab' },

@@ -66,11 +66,11 @@
 
 ---
 
-## Toggle / Local Settings (`<leader>L`)
+## Toggle / Local Settings (`<leader>t`)
 
 | Key | Mode | Action |
 |-----|------|--------|
-| `<leader>Lw` | n | Toggle line wrap |
+| `<leader>tw` | n | Toggle line wrap |
 | `<leader>th` | n | Toggle LSP inlay hints |
 | `<leader>tb` | n | Toggle git blame line |
 | `<leader>tD` | n | Toggle git show deleted (inline) |
