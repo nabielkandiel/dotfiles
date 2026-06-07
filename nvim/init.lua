@@ -42,10 +42,12 @@ local specs = {
   'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/folke/todo-comments.nvim',
+  'https://github.com/MagicDuck/grug-far.nvim',
 
   -- Telescope
   'https://github.com/nvim-telescope/telescope-ui-select.nvim',
   'https://github.com/nvim-telescope/telescope.nvim',
+  'https://github.com/nvim-telescope/telescope-live-grep-args.nvim',
 
   -- LSP
   'https://github.com/mason-org/mason.nvim',
@@ -89,7 +91,7 @@ require('kickstart.plugins.autopairs')
 -- which-key (inline: needs CORE_KEYMAPS global from core.keymaps)
 local wk = require('which-key')
 wk.setup({
-  delay = 0,
+  delay = 200,
   icons = {
     mappings = vim.g.have_nerd_font,
     keys = vim.g.have_nerd_font and {} or {
