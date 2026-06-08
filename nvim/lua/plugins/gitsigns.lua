@@ -47,7 +47,7 @@ require('gitsigns').setup({
     map('n', '<leader>gku', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
     map('n', '<leader>gkR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
     map('n', '<leader>gkp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
-    map(n, '<leader>gb', gitsigns.blame_line, { desc = 'git [b]lame line' })
+    map('n', '<leader>gb', gitsigns.blame_line, { desc = 'git [b]lame line' })
     map('n', '<leader>gkd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
     map('n', '<leader>gkD', function()
       gitsigns.diffthis('@')
