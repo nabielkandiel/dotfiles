@@ -74,6 +74,7 @@ local servers = {
   clangd = {
     cmd = { 'clangd', '--fallback-style=none' },
   },
+  dartls = {},
   gopls = {},
   pyright = {},
   rust_analyzer = {},

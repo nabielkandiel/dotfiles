@@ -4,6 +4,7 @@ require('nvim-treesitter').setup({
     'bash',
     'c',
     'cpp',
+    'dart',
     'diff',
     'html',
     'lua',
