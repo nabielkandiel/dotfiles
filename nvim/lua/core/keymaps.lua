@@ -5,6 +5,9 @@ vim.g.have_nerd_font = true
 -- These are for which-key menu labels
 vim.keymap.set('n', '<leader>ss', '<cmd>GrugFar<CR>', { desc = '[S]earch & Replace (Grug)' })
 
+-- dont overwrite clipboard when pasting
+vim.keymap.set('x', 'p', [["_dP]])
+
 CORE_KEYMAPS = {
   { '<leader>b', group = '[B]uffers' },
   { '<leader>b<Tab>', desc = 'next buffer' },
@@ -91,10 +94,10 @@ local function smart_close()
   if ok and scope.close_buffer then
     scope.close_buffer()
   else
-    if vim.fn.exists(':Bdelete') == 2 then
-      vim.cmd('Bdelete')
+    if vim.fn.exists ':Bdelete' == 2 then
+      vim.cmd 'Bdelete'
     else
-      vim.cmd('bdelete')
+      vim.cmd 'bdelete'
     end
   end
 end
