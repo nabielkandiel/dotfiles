@@ -100,8 +100,10 @@ local servers = {
 require('mason').setup()
 require('mason-lspconfig').setup()
 
-local ensure_installed = vim.tbl_keys(servers)
-vim.list_extend(ensure_installed, { 'stylua' })
+local ensure_installed = vim.tbl_filter(function(name)
+  return name ~= 'dartls'
+end, vim.tbl_keys(servers))
+vim.list_extend(ensure_installed, { 'stylua', 'prettierd' })
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
 for name, server in pairs(servers) do
